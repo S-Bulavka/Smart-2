@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Demo</id>
+    <version>1.0.5749.32588</version>
+    <title>Eagle Enterprise Edition: Demo Plugin</title>
+    <authors>Eagle Development Team</authors>
+    <owners>Eagle Development Team</owners>
+    <licenseUrl>http://eagle.to/enterprise/license.html</licenseUrl>
+    <projectUrl>http://eagle.to/</projectUrl>
+    <iconUrl>http://eagle.to/images/eagle128.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Implements a custom host that allows for seamless command-driven product demonstrations.</description>
+    <copyright>Copyright © 2007-2012 by Joe Mistachkin.  All rights reserved.</copyright>
+    <language>en-US</language>
+    <tags>eagle script automation command presentation demonstration</tags>
+    <dependencies>
+      <dependency id="Eagle.CLRv4" version="1.0.5749.32588" />
+      <dependency id="Harpy" version="1.0.5749.32588" />
+    </dependencies>
+  </metadata>
+</package>

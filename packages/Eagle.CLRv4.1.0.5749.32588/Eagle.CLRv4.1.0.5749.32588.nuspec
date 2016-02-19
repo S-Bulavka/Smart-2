@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Eagle.CLRv4</id>
+    <version>1.0.5749.32588</version>
+    <title>The Eagle Project (CLRv4)</title>
+    <authors>Eagle Development Team</authors>
+    <owners>Eagle Development Team</owners>
+    <licenseUrl>http://eagle.to/standard/license.html</licenseUrl>
+    <projectUrl>http://eagle.to/</projectUrl>
+    <iconUrl>http://eagle.to/images/eagle128.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An implementation of the Tcl scripting language.</description>
+    <copyright>Copyright © 2007-2012 by Joe Mistachkin.  All rights reserved.</copyright>
+    <language>en-US</language>
+    <tags>automation console database dynamic extensibility functional integration interop interpreter mono msbuild parser plugin powershell reflection scripting sockets tcl/tk winforms wix wpf</tags>
+  </metadata>
+</package>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Harpy</id>
+    <version>1.0.5749.32588</version>
+    <title>Eagle Enterprise Edition: Harpy Plugin</title>
+    <authors>Eagle Development Team</authors>
+    <owners>Eagle Development Team</owners>
+    <licenseUrl>http://eagle.to/enterprise/license.html</licenseUrl>
+    <projectUrl>http://eagle.to/</projectUrl>
+    <iconUrl>http://eagle.to/images/eagle128.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Public key infrastructure-based software license enforcement.
+      Supports the creation, verification, and renewal of both license certificates and script certificates.
+      Also supports verification and evaluation of signed scripts, via the aforementioned script certificates.</description>
+    <copyright>Copyright © 2007-2012 by Joe Mistachkin.  All rights reserved.</copyright>
+    <language>en-US</language>
+    <tags>certificate eagle enforcement keypair licensing pki</tags>
+    <dependencies>
+      <dependency id="Eagle.CLRv4" version="1.0.5749.32588" />
+    </dependencies>
+  </metadata>
+</package>
