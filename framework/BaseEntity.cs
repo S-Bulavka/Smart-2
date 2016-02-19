@@ -15,6 +15,8 @@ namespace demo.framework
         {
             XmlConfigurator.Configure();
             Log = Logger.GetInstance();
+
+
         }
     }
 }
