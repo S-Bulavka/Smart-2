@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 
@@ -15,12 +12,14 @@ namespace demo.framework.Elements
         private readonly RemoteWebElement _element;
         private readonly String _name;
         private readonly By _locator;
+        private readonly String _text;
         private List<IWebElement> _elements;
 
         protected BaseElement(By locator, String name)
         {
             this._name = name;
             this._locator = locator;
+            //this._text = this.Text;
         }
 
         protected BaseElement()
@@ -37,7 +36,11 @@ namespace demo.framework.Elements
         {
             return _name;
         }
-
+        public String GetText()
+        {
+            Log.Info("Element with the following text: " + this.GetElement().Text + " is present");
+            return this.GetElement().Text;
+        }
         protected By GetLocator()
         {
             return _locator;
