@@ -16,6 +16,8 @@ namespace demo.framework.forms
         public void SearchFor(string text)
         {
             _txbSearchJobBar.SetText(text);
+
+
             _btnSubmitSearch.Click();
             Browser.WaitForPageToLoad();
 
