@@ -104,6 +104,7 @@
     <Compile Include="framework\Configuration.cs" />
     <Compile Include="framework\Elements\BaseElement.cs" />
     <Compile Include="framework\Elements\Button.cs" />
+    <Compile Include="framework\Elements\Label.cs" />
     <Compile Include="framework\Elements\Link.cs" />
     <Compile Include="framework\Elements\PopUp.cs" />
     <Compile Include="framework\Elements\TextBox.cs" />

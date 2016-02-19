@@ -33,7 +33,7 @@ namespace demo.tests
                                                 "тестировщиком" };
 
        [Test]
-        public void RunTest()
+        public void ChangeFirstNameOfUserTest()
         {
            Log.Step();
            var testForm = new TutByHomePageForm();
@@ -61,17 +61,16 @@ namespace demo.tests
 
            Log.Step();
            myProfileForm.ChangeFirstName(NewFirstName);
-  //Browser.GetDriver().Close();
-           /*
-           var jobForm = new JobForm();
-
-           Log.Step();
-           jobForm.SearchFor(SearchText);
-
-           var jobSearchResultsForm = new JobSearchResultsForm();
-
-           Log.Step();
-           jobSearchResultsForm.GetSearchResult(_arrayOfVerifiedWords);*/
         }
+
+       [Test]
+       public void OpenRandomCatalogTest()
+       {
+           Log.Step();
+           var testForm = new TutByHomePageForm();
+
+           Log.Step();
+           testForm.OpenForums();
+       }
     }
 }

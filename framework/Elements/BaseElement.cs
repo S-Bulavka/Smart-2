@@ -82,6 +82,7 @@ namespace demo.framework.Elements
 
         public Boolean IsPresent()
         {
+            WaitForElementPresent();
             bool isPresent = Browser.GetDriver().FindElements(_locator).Count > 0;
             Log.Info(GetName() + " : is present : " + isPresent);
             return isPresent;

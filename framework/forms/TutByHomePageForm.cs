@@ -10,6 +10,8 @@ namespace demo.framework.forms
         private readonly Link _lnkJob = new Link(By.XPath("//a[contains(@class,'topbar__link')][contains(@title,'Работа')]"), "Job link");
         private readonly Link _lnkUserName = new Link(By.XPath("//span[contains(@class,'uname')]"), "User Name link");
         private readonly Link _lnkProfile = new Link(By.XPath("//a[contains(@href, 'http://profile.tut.by/')]"), "My Profile link");
+        private readonly Link _lnkForums = new Link(By.XPath("//a[contains(@class, 'topbar-burger')]"), "Forums link");
+        private readonly Link _lnkAllForums = new Link(By.XPath("//li[contains(@class, 'topbar__li mores')]"), "All Forums link");
 
         private readonly Button _btnLogin = new Button(By.XPath("//a[contains(@class,'enter')]"), "Login button");
         private readonly Button _btnLoginOnPopUp = new Button(By.XPath("//input[contains(@class,'button auth__enter')]"), "Login button");
@@ -50,6 +52,17 @@ namespace demo.framework.forms
         {
             _lnkUserName.Click();
             _lnkProfile.Click();
+        }
+
+        public void OpenForums()
+        {
+            _lnkForums.Click();
+            Assert.AreEqual(true, _lnkAllForums.IsPresent());
+        }
+
+        public void RandomChooseOfCatalog()
+        {
+
         }
     }
 }
