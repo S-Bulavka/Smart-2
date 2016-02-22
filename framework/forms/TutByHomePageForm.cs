@@ -12,6 +12,8 @@ namespace demo.framework.forms
         private readonly Link _lnkProfile = new Link(By.XPath("//a[contains(@href, 'http://profile.tut.by/')]"), "My Profile link");
         private readonly Link _lnkForums = new Link(By.XPath("//a[contains(@class, 'topbar-burger')]"), "Forums link");
         private readonly Link _lnkAllForums = new Link(By.XPath("//li[contains(@class, 'topbar__li mores')]"), "All Forums link");
+        private readonly Link _lnkTalksForum = new Link(By.XPath("//a[contains(@title, 'Форумы')]"), "Talks Forum link");
+        private readonly Link _lnkCurrency = new Link(By.XPath("//a[contains(@data-ua-hash, 'widget_finance')]"), "Best course of exchange link");
 
         private readonly Button _btnLogin = new Button(By.XPath("//a[contains(@class,'enter')]"), "Login button");
         private readonly Button _btnLoginOnPopUp = new Button(By.XPath("//input[contains(@class,'button auth__enter')]"), "Login button");
@@ -60,9 +62,19 @@ namespace demo.framework.forms
             Assert.AreEqual(true, _lnkAllForums.IsPresent());
         }
 
-        public void RandomChooseOfCatalog()
+        public void GoToAllForums()
         {
+            _lnkAllForums.Click();
+        }
 
+        public void GoToTalks()
+        {
+            _lnkTalksForum.Click();
+        }
+
+        public void OpenBestCurrencyCources()
+        {
+            _lnkCurrency.Click();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace demo.tests
        private const string FirstName = "123";
        private const string NewFirstName = "123new";
        private const string LastName = "456";
+       private double InitialAmount = 21000.00;
        private const string SearchText = "специалист по тестированию";
        private readonly string[] _arrayOfVerifiedWords = new string[] { "специалист по тестированию", 
                                                 "Cпециалист по тестированию", 
@@ -71,6 +72,42 @@ namespace demo.tests
 
            Log.Step();
            testForm.OpenForums();
+
+           Log.Step();
+           testForm.GoToTalks();
+
+          // Browser.GetDriver().SwitchTo().Window(Browser.GetDriver().WindowHandles.Last());
+           var talksForm = new TalksForm();
+           
+           Log.Step();
+           talksForm.GoToMostPopular();
+
+           var topTalksForm = new TopListTalksForm();
+
+           Log.Step();
+           string theme = topTalksForm.ChooseRandomForum();
+
+           var specificTalkForm = new SpecificForumThemeForm(theme);
+
+          // Log.Step();
+          // specificTalkForm.ChooseRandomForum();
        }
+
+       [Test]
+       public void CheckCurrencyConverter()
+       {
+           Log.Step();
+           var testForm = new TutByHomePageForm();
+
+           Log.Step();
+           testForm.OpenBestCurrencyCources();
+
+
+           var exchangeRatesForm = new ExchangeRates();
+           Log.Step();
+           exchangeRatesForm.TypeInitialAmount(InitialAmount);
+       }
+
+     
     }
 }

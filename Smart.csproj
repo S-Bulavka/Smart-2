@@ -109,9 +109,14 @@
     <Compile Include="framework\Elements\PopUp.cs" />
     <Compile Include="framework\Elements\TextBox.cs" />
     <Compile Include="framework\forms\BaseForm.cs" />
+    <Compile Include="framework\forms\ExchangeRates.cs" />
     <Compile Include="framework\forms\JobSearchResultsForm.cs" />
     <Compile Include="framework\forms\JobForm.cs" />
     <Compile Include="framework\forms\ProfileForm.cs" />
+    <Compile Include="framework\forms\SpecificForumThemeForm.cs" />
+    <Compile Include="framework\forms\TalksForm.cs" />
+    <Compile Include="framework\forms\ResourcesForm.cs" />
+    <Compile Include="framework\forms\TopListTalksForm.cs" />
     <Compile Include="framework\forms\TutByHomePageForm.cs" />
     <Compile Include="framework\Logger.cs" />
     <Compile Include="framework\RunConfigurator.cs" />

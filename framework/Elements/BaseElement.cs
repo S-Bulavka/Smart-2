@@ -38,12 +38,39 @@ namespace demo.framework.Elements
         }
         public String GetText()
         {
+            WaitForElementPresent();
             Log.Info("Element with the following text: " + this.GetElement().Text + " is present");
             return this.GetElement().Text;
         }
+
+        public String GetText(string _valueToOutput)
+        {
+            WaitForElementPresent();
+            Log.Info(_valueToOutput + this.GetElement().Text);
+            return this.GetElement().Text;
+        }
+
         protected By GetLocator()
         {
             return _locator;
+        }
+
+        public string _randomText;
+
+        public void ClickRandomElementFromTheList()
+        {
+            WaitForElementPresent();
+            _elements = Browser.GetDriver().FindElements(_locator).ToList();
+
+            Random rnd = new Random();
+            int tempIndex = 0; //радомный индекс для выбора
+            tempIndex = rnd.Next(0, _elements.Count);
+            Log.Info("Random selected item is " + _elements[tempIndex].Text);
+            _randomText = _elements[tempIndex].Text;
+            _elements[tempIndex].Click();
+
+            Log.Info(String.Format("{0} :: click", GetName()));
+           
         }
 
         public Boolean AreElementsContainsText(String[] expectedText)
