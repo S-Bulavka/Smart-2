@@ -1,11 +1,7 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using NUnit.Framework;
 using demo.framework;
 using demo.framework.forms;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Support.UI;
 
 namespace demo.tests
 {
@@ -18,6 +14,8 @@ namespace demo.tests
        private const string NewFirstName = "123new";
        private const string LastName = "456";
        private double InitialAmount = 21000.00;
+       private double InitialAmount2 = 100000.00;
+       private const string City= "Витебск";
        private const string SearchText = "специалист по тестированию";
        private readonly string[] _arrayOfVerifiedWords = new string[] { "специалист по тестированию", 
                                                 "Cпециалист по тестированию", 
@@ -106,8 +104,44 @@ namespace demo.tests
            var exchangeRatesForm = new ExchangeRates();
            Log.Step();
            exchangeRatesForm.TypeInitialAmount(InitialAmount);
+           Log.Step();
+           exchangeRatesForm.TypeInitialAmount(InitialAmount2);
        }
 
-     
+       [Test]
+       public void CheckTodayAfisha()
+       {
+           Log.Step();
+           var testForm = new TutByHomePageForm();
+
+           Log.Step();
+           testForm.GoToAfisha();
+
+           var afishaForm = new AfishaForum();
+           Log.Step();
+           afishaForm.GoToWhereToGoToday();
+           Log.Step();
+           var afishaForTodayForm = new AfishaTodayForum();
+
+       }
+
+       [Test]
+       public void CheckWeatherForecastFor2Weeks()
+       {
+           Log.Step();
+           var testForm = new TutByHomePageForm();
+           
+           Log.Step();
+           testForm.GoToWeatherViaWidjet();
+
+           var weatherForm = new WeatherForum();
+           
+           Log.Step();
+           weatherForm.SearchFor(City);
+
+           Log.Step();
+           weatherForm.GoToDetail();
+
+       }
     }
 }

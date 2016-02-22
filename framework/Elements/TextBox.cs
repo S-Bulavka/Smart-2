@@ -14,5 +14,13 @@ namespace demo.framework.Elements
             GetElement().SendKeys(text);
             Log.Info(String.Format("{0} :: type text '{1}'", GetName(), text));
         }
+
+        public void ClearText()
+        {
+            WaitForElementPresent();
+            GetElement().Click();
+            GetElement().Clear();
+           // Log.Info(String.Format("{0} :: type text '{1}'", GetName(), text));
+        }
     }
 }

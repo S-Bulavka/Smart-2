@@ -13,7 +13,9 @@ namespace demo.framework.forms
         private readonly Link _lnkForums = new Link(By.XPath("//a[contains(@class, 'topbar-burger')]"), "Forums link");
         private readonly Link _lnkAllForums = new Link(By.XPath("//li[contains(@class, 'topbar__li mores')]"), "All Forums link");
         private readonly Link _lnkTalksForum = new Link(By.XPath("//a[contains(@title, 'Форумы')]"), "Talks Forum link");
+        private readonly Link _lnkAfishaForum = new Link(By.XPath("//a[contains(@title, 'Афиша')]"), "Afisha Forum link");
         private readonly Link _lnkCurrency = new Link(By.XPath("//a[contains(@data-ua-hash, 'widget_finance')]"), "Best course of exchange link");
+        private readonly Link _lnkWeather = new Link(By.XPath("//a[contains(@data-ua-hash, 'widget_weather')]"), "Weather link");
 
         private readonly Button _btnLogin = new Button(By.XPath("//a[contains(@class,'enter')]"), "Login button");
         private readonly Button _btnLoginOnPopUp = new Button(By.XPath("//input[contains(@class,'button auth__enter')]"), "Login button");
@@ -62,19 +64,23 @@ namespace demo.framework.forms
             Assert.AreEqual(true, _lnkAllForums.IsPresent());
         }
 
-        public void GoToAllForums()
-        {
-            _lnkAllForums.Click();
-        }
 
         public void GoToTalks()
         {
             _lnkTalksForum.Click();
         }
-
+        public void GoToAfisha()
+        {
+            _lnkAfishaForum.Click();
+        }
         public void OpenBestCurrencyCources()
         {
             _lnkCurrency.Click();
+        }
+
+        public void GoToWeatherViaWidjet()
+        {
+            _lnkWeather.Click();
         }
     }
 }
