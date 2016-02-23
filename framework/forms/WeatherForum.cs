@@ -22,13 +22,10 @@ namespace demo.framework.forms
             _lnkDetail.Click();
             _tableWeekDetail.IsPresent();
         }
-
-       
-
+  
         public void SearchFor(string text)
         {
             _txbSearch.SetText(text);
-
 
             _btnSearch.Click();
             Browser.WaitForPageToLoad();

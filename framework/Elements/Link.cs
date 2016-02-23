@@ -1,11 +1,10 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace demo.framework.Elements
 {
     public class Link : BaseElement
     {
-        public Link(By locator, String name) : base(locator, name) { }
+        public Link(By locator, string name) : base(locator, name) { }
         public Link() : base() { }
     }
 

@@ -8,9 +8,8 @@ namespace demo.framework.forms
 
         private readonly TextBox _txbFirstName = new TextBox(By.XPath("//input[contains(@name, 'FirstName')]"), "First Name text box");
         private readonly Button _btnRemember = new Button(By.XPath("//input[contains(@id,'updateBtn')]"), "Remember button");
-        private readonly Label _lblSuccessMesssage = new Label(By.XPath("//div[contains(@id,'idChangeMessage')]"), "Successfully Updating message");
-
-      
+        private readonly Label _lblSuccessMesssage = new Label(By.XPath("//div[contains(@id,'idChangeMessage')]"), "Successfully Updating message");   
+        
         public ProfileForm()
             : base(By.ClassName("w254v"), "My Profile")
         {
@@ -18,6 +17,7 @@ namespace demo.framework.forms
 
         public void ChangeFirstName(string newFirstName)
         {
+            _txbFirstName.ClearText();
             _txbFirstName.SetText(newFirstName);
             _btnRemember.Click();
 

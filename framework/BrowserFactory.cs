@@ -16,16 +16,16 @@ namespace demo.framework
         /// <returns>driver</returns>
         public static IWebDriver SetupBrowser()
         {
-            String browserName = Configuration.GetBrowser();
+            var browserName = Configuration.GetBrowser();
             if (browserName == "chrome")
             {
-              return new ChromeDriver(System.IO.Path.GetFullPath(DriverPath));
+                return new ChromeDriver(System.IO.Path.GetFullPath(DriverPath));
             }
-            if (browserName == "iexplore")
+            else if (browserName == "iexplore")
             {
-            return new InternetExplorerDriver(System.IO.Path.GetFullPath(DriverPath));
+                return new InternetExplorerDriver(System.IO.Path.GetFullPath(DriverPath));
             }
-            if (browserName == "firefox")
+            else if (browserName == "firefox")
             {
                 return new FirefoxDriver();
             }

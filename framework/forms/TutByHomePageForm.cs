@@ -6,8 +6,6 @@ namespace demo.framework.forms
 {
     public class TutByHomePageForm : BaseForm {
 
-	
-        private readonly Link _lnkJob = new Link(By.XPath("//a[contains(@class,'topbar__link')][contains(@title,'Работа')]"), "Job link");
         private readonly Link _lnkUserName = new Link(By.XPath("//span[contains(@class,'uname')]"), "User Name link");
         private readonly Link _lnkProfile = new Link(By.XPath("//a[contains(@href, 'http://profile.tut.by/')]"), "My Profile link");
         private readonly Link _lnkForums = new Link(By.XPath("//a[contains(@class, 'topbar-burger')]"), "Forums link");
@@ -25,17 +23,11 @@ namespace demo.framework.forms
 
         private readonly PopUp _puLogin = new PopUp(By.XPath("//div[contains(@class,'b-popup-i')]"), "Authorization Pop up");
 
-           
         public TutByHomePageForm()
             : base(By.ClassName("header-logo"), "Tut by")
         {
         }
         
-        public void GoToJob()
-        {
-            _lnkJob.Click();
-        }
-
         public void GoToLoginPopUp()
         {
             _btnLogin.Click();
@@ -48,7 +40,7 @@ namespace demo.framework.forms
      
             _btnLoginOnPopUp.Click();
             
-            string userName = string.Concat(firstName, " ", lastName);
+            var userName = string.Concat(firstName, " ", lastName);
             Assert.AreEqual(userName, _lnkUserName.GetText());
         }
 
@@ -63,7 +55,6 @@ namespace demo.framework.forms
             _lnkForums.Click();
             Assert.AreEqual(true, _lnkAllForums.IsPresent());
         }
-
 
         public void GoToTalks()
         {

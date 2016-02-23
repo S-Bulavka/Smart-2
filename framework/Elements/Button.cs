@@ -1,10 +1,9 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace demo.framework.Elements
 {
     public class Button : BaseElement
     {
-        public Button(By locator, String name) : base(locator, name) { }
+        public Button(By locator, string name) : base(locator, name) { }
     }
 }

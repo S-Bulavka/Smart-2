@@ -10,16 +10,15 @@ namespace demo.framework.Elements
     public abstract class BaseElement : BaseEntity
     {
         private readonly RemoteWebElement _element;
-        private readonly String _name;
+        private readonly string _name;
         private readonly By _locator;
-        private readonly String _text;
+        private readonly string _text;
         private List<IWebElement> _elements;
 
-        protected BaseElement(By locator, String name)
+        protected BaseElement(By locator, string name)
         {
             this._name = name;
             this._locator = locator;
-            //this._text = this.Text;
         }
 
         protected BaseElement()
@@ -32,21 +31,21 @@ namespace demo.framework.Elements
             return (RemoteWebElement)Browser.GetDriver().FindElement(_locator); 
         }
 
-        public String GetName()
+        public string GetName()
         {
             return _name;
         }
-        public String GetText()
+        public string GetText()
         {
             WaitForElementPresent();
             Log.Info("Element with the following text: " + this.GetElement().Text + " is present");
             return this.GetElement().Text;
         }
 
-        public String GetText(string _valueToOutput)
+        public string GetText(string valueToOutput)
         {
             WaitForElementPresent();
-            Log.Info(_valueToOutput + this.GetElement().Text);
+            Log.Info(valueToOutput + this.GetElement().Text);
             return this.GetElement().Text;
         }
 
@@ -55,46 +54,46 @@ namespace demo.framework.Elements
             return _locator;
         }
 
-        public string _randomText;
 
+        public string RandomText;
         public void ClickRandomElementFromTheList()
         {
             WaitForElementPresent();
             _elements = Browser.GetDriver().FindElements(_locator).ToList();
 
-            Random rnd = new Random();
-            int tempIndex = 0; //радомный индекс для выбора
+            var rnd = new Random();
+            var tempIndex = 0; //радомный индекс для выбора
             tempIndex = rnd.Next(0, _elements.Count);
             Log.Info("Random selected item is " + _elements[tempIndex].Text);
-            _randomText = _elements[tempIndex].Text;
+            RandomText = _elements[tempIndex].Text;
             _elements[tempIndex].Click();
 
-            Log.Info(String.Format("{0} :: click", GetName()));
+            Log.Info(string.Format("{0} :: click", GetName()));
            
         }
 
-        public Boolean AreElementsContainsText(String[] expectedText)
+        public bool AreElementsContainsText(string[] expectedText)
         {
-            bool isPresentTotal = true;
-            bool isPresentOne= false;
+            var isPresentTotal = true;
+            var isPresentOne= false;
             WaitForElementPresent();
             _elements = Browser.GetDriver().FindElements(_locator).ToList();
-            foreach (IWebElement Element in _elements)
+            foreach (var element in _elements)
             {   
                 isPresentOne = false;
-                foreach (String text in expectedText)
+                foreach (var text in expectedText)
                 {
-                    isPresentOne = Element.Text.Contains(text);
+                    isPresentOne = element.Text.Contains(text);
                     if (isPresentOne)
                     {
-                        Log.Info(Element.Text + " is correct Result : Header contains the following text: " + text);
+                        Log.Info(element.Text + " is correct Result : Header contains the following text: " + text);
                         break;
                     }
                 }
                 if (!isPresentOne)
                 {
                     isPresentTotal = false;
-                    Log.Info(Element.Text + " is INCORRECT result");
+                    Log.Info(element.Text + " is INCORRECT result");
                 }
             }
             return isPresentTotal;
@@ -104,13 +103,13 @@ namespace demo.framework.Elements
         {
             WaitForElementPresent();
             GetElement().Click();
-            Log.Info(String.Format("{0} :: click", GetName()));
+            Log.Info(string.Format("{0} :: click", GetName()));
         }
 
-        public Boolean IsPresent()
+        public bool IsPresent()
         {
             WaitForElementPresent();
-            bool isPresent = Browser.GetDriver().FindElements(_locator).Count > 0;
+            var isPresent = Browser.GetDriver().FindElements(_locator).Count > 0;
             Log.Info(GetName() + " : is present : " + isPresent);
             return isPresent;
         }

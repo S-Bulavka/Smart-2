@@ -1,16 +1,15 @@
-﻿using System;
-using System.Xml;
+﻿using System.Xml;
 
 namespace demo.framework
 {
     public class RunConfigurator
     {   
-        private static XmlDocument xmlDoc = new XmlDocument(); // Create an XML document object
+        private static readonly XmlDocument XmlDoc = new XmlDocument(); // Create an XML document object
             
-        public static String GetValue(String tag)
+        public static string GetValue(string tag)
         {   
-            xmlDoc.Load("../../resources/run.xml"); // Load the XML document from the specified file
-            XmlNodeList browser = xmlDoc.GetElementsByTagName(tag);
+            XmlDoc.Load("../../resources/run.xml"); // Load the XML document from the specified file
+            var browser = XmlDoc.GetElementsByTagName(tag);
             return browser[0].InnerText;
         }
     }

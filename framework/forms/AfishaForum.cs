@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 
 namespace demo.framework.forms
 {
-    class AfishaForum : BaseForm
+    internal class AfishaForum : BaseForm
     {
         private readonly Link _lnkWhereToGoToday = new Link(By.XPath("//a[contains(text(),'Куда сходить сегодня')]"), "Where To Go Today link");
        

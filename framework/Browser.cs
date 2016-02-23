@@ -42,6 +42,7 @@ namespace demo.framework
             }
             catch (Exception e)
             {
+                Log.Info(e.Message);
             }
         }
 

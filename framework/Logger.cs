@@ -6,44 +6,41 @@ namespace demo.framework
 
     public class Logger
     {
-        private static Logger instance;
+        private static Logger _instance;
 
-        private ILog logger;
-        private int stepNumber =0;
+        private readonly ILog _logger;
+        private int _stepNumber =0;
         private Logger(ILog logger)
         {
-            this.logger = logger;
+            this._logger = logger;
         }
 
         public static Logger GetInstance()
         {
-            if (instance == null)
-            {
+            if(_instance == null){
                 lock (typeof(Logger))
                 {
-                    if (instance == null)
-                        instance = new Logger(LogManager.GetLogger(typeof(BaseEntity)));
+                    if (_instance == null)
+                        _instance = new Logger(LogManager.GetLogger(typeof(BaseEntity)));
                 }
-            }
- 
-            return instance;
+            } 
+            return _instance;
         }
-
 
         public void Step()
         {
-            stepNumber++;
-            logger.Info("== Step " + stepNumber + " ==");
+            _stepNumber++;
+            _logger.Info("== Step " + _stepNumber + " ==");
         }
 
-        public void Info(String info)
+        public void Info(string info)
         {
-            logger.Info(info);
+            _logger.Info(info);
         }
 
-        public void Fatal(String fatal)
+        public void Fatal(string fatal)
         {
-            logger.Fatal(fatal);
+            _logger.Fatal(fatal);
         }
     }
 }

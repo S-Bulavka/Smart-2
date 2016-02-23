@@ -5,14 +5,14 @@ namespace demo.framework.Elements
 {
     public class TextBox : BaseElement
     {
-        public TextBox(By locator, String name) : base(locator, name){}
+        public TextBox(By locator, string name) : base(locator, name){}
 
-        public void SetText(String text)
+        public void SetText(string text)
         {
             WaitForElementPresent();
             GetElement().Click();
             GetElement().SendKeys(text);
-            Log.Info(String.Format("{0} :: type text '{1}'", GetName(), text));
+            Log.Info(string.Format("{0} :: type text '{1}'", GetName(), text));
         }
 
         public void ClearText()
@@ -20,7 +20,6 @@ namespace demo.framework.Elements
             WaitForElementPresent();
             GetElement().Click();
             GetElement().Clear();
-           // Log.Info(String.Format("{0} :: type text '{1}'", GetName(), text));
         }
     }
 }
