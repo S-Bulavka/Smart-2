@@ -10,7 +10,7 @@ namespace demo.tests
     {
        private const string Login = "kaktusflash";
        private const string Password = "solnyhko";
-       private const string FirstName = "Sveta";
+       private const string FirstName = "Svetlana";
        private const string NewFirstName = "Svetlana";
        private const string LastName = "Bulavka";
        private static readonly double[] InitialAmount = new double[]{
