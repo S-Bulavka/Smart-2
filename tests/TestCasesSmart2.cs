@@ -14,8 +14,8 @@ namespace demo.tests
        private const string NewFirstName = "Svetlana";
        private const string LastName = "Bulavka";
        private static readonly double[] InitialAmount = new double[]{
-           21000.00,
-           100000.00};
+           21644.00,
+           43288.00};
 
        private const string City= "Витебск";
 
@@ -41,6 +41,8 @@ namespace demo.tests
 
            Log.Step();
            myProfileForm.ChangeFirstName(NewFirstName);
+
+           Log.Info("End of test");
         }
 
        [Test]
@@ -66,6 +68,7 @@ namespace demo.tests
            var theme = topTalksForm.ChooseRandomForum();
 
            var specificTalkForm = new SpecificForumThemeForm(theme);
+           Log.Info("End of test");
        }
 
        [Test]
@@ -84,6 +87,8 @@ namespace demo.tests
 
            Log.Step();
            exchangeRatesForm.TypeInitialAmount(InitialAmount[1]);
+
+           Log.Info("End of test");
        }
 
        [Test]
@@ -102,6 +107,8 @@ namespace demo.tests
 
            Log.Step();
            var afishaForTodayForm = new AfishaTodayForum();
+
+           Log.Info("End of test");
        }
 
        [Test]
@@ -120,6 +127,8 @@ namespace demo.tests
 
            Log.Step();
            weatherForm.GoToDetail();
+
+           Log.Info("End of test");
        }
 
     }
