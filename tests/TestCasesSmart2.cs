@@ -14,8 +14,8 @@ namespace demo.tests
        private const string NewFirstName = "Svetlana";
        private const string LastName = "Bulavka";
        private static readonly double[] InitialAmount = new double[]{
-           21644.00,
-           43288.00};
+           21610.00,
+           43220.00};
 
        private const string City= "Витебск";
 
