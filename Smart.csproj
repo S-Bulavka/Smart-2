@@ -108,7 +108,7 @@
     <Compile Include="framework\Elements\Link.cs" />
     <Compile Include="framework\Elements\PopUp.cs" />
     <Compile Include="framework\Elements\TextBox.cs" />
-    <Compile Include="framework\forms\WeatherForum.cs" />
+    <Compile Include="framework\forms\WeatherForm.cs" />
     <Compile Include="framework\forms\AfishaTodayForum.cs" />
     <Compile Include="framework\forms\AfishaForum.cs" />
     <Compile Include="framework\forms\BaseForm.cs" />

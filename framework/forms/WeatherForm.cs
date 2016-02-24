@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 
 namespace demo.framework.forms
 {
-    internal class WeatherForum : BaseForm
+    internal class WeatherForm : BaseForm
     {
         private readonly Link _lnkDetail = new Link(By.XPath("//a[contains(text(),'Подробно')]"), "Detail link");
         private readonly Label _tableWeekDetail = new Label(By.XPath("//div[contains(@class, 'b-future tab-pane active')]"), "Week Detail table");
@@ -12,7 +12,7 @@ namespace demo.framework.forms
         private readonly Button _btnSearch = new Button(By.XPath("//input[contains(@value,'Найти')]"), "Search button");
 
        
-        public WeatherForum()
+        public WeatherForm()
             : base(By.XPath("//div[contains(@class, 'logo')]/a[contains(text(), 'ПОГОДА')]"), "Weather page")
         {
         }

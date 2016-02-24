@@ -112,7 +112,7 @@ namespace demo.tests
        }
 
        [Test]
-       public void CheckWeatherForecastFor2Weeks()
+       public void CheckDetailsWeatherForecastInCity()
        {
            Log.Step();
            var homeTutByForm = new TutByHomePageForm();
@@ -120,7 +120,7 @@ namespace demo.tests
            Log.Step();
            homeTutByForm.GoToWeatherViaWidjet();
 
-           var weatherForm = new WeatherForum();
+           var weatherForm = new WeatherForm();
            
            Log.Step();
            weatherForm.SearchFor(City);
