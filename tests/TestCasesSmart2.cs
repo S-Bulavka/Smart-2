@@ -11,7 +11,7 @@ namespace demo.tests
        private const string Login = "kaktusflash";
        private const string Password = "solnyhko";
        private const string FirstName = "Svetlana";
-       private const string NewFirstName = "Svetlana";
+       private const string NewFirstName = "Svetlana"; //the same name is used to avoid an error in double running
        private const string LastName = "Bulavka";
        private static readonly double[] InitialAmount = new double[]{
            21610.00,
